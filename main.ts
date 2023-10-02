@@ -2,6 +2,12 @@ import { strict } from 'assert'
 import { App, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian'
 import { MarkdownView, TFile } from 'obsidian'
 
+
+function basename(path: string): string {
+  let base = new String(path).substring(path.lastIndexOf("/") + 1);
+  return base;
+}
+
 export default class WikilinksToMdlinks extends Plugin {
 	onload() {
 		console.log('loading wikilinks-to-mdlinks plugin...')
